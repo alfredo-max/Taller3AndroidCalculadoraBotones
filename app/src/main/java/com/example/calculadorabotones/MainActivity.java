@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     public void OnClickOperacionCapturaNumero1(View view,String Operador){
 
 
-        if((setOperador==false && "0".equals(tv_display.getText().toString())==false || display_respuesta==true) && estainverso==false ){
+        if((setOperador==false && "0".equals(tv_display.getText().toString())==false || display_respuesta==true) && estainverso==false && error==false ){
             String display=tv_display.getText().toString();
             n1=Double.parseDouble(display);
             tamnum1=display.length();
@@ -103,11 +103,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Raiz(View view){
-        if(setOperador==false && estainverso==false){
+        if(setOperador==false && estainverso==false && error==false){
             n1=Double.parseDouble(tv_display.getText().toString());
-            respuesta=Math.sqrt(n1);
-            tv_display.setText(String.valueOf(respuesta));
-            display_respuesta=true;
+                respuesta=Math.sqrt(n1);
+                tv_display.setText(String.valueOf(respuesta));
+                display_respuesta=true;
+
+
         }
     }
     private boolean estainverso=false;
